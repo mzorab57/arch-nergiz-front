@@ -1,0 +1,30 @@
+import { ArrowRight } from 'lucide-react'
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+const StartProject = () => {
+  return (
+      <section className="py-24 ">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div data-aos="fade-up" data-aos-duration="1000">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-100 mb-6">
+              Ready to Transform Your Space?
+            </h2>
+            <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+              Let's bring your vision to life with our complete interior design services
+            </p>
+            <Link
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              to="/contact"
+              className="inline-flex items-center space-x-2 px-10 py-5 bg-gradient-to-r from-amber-600 to-amber-700 text-white rounded-full font-semibold hover:from-amber-700 hover:to-amber-800 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 text-lg"
+            >
+              <span>Start Your Project</span>
+              <ArrowRight className="w-6 h-6" />
+            </Link>
+          </div>
+        </div>
+      </section>
+  )
+}
+
+export default StartProject
