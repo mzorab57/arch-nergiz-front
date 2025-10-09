@@ -5,7 +5,7 @@ export default function About() {
   return (
     <div className="min-h-screen">
       <section className="relative py-[27rem] bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/1909791/pexels-photo-1909791.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center opacity-40"></div>
+        <div className="absolute inset-0 bg-[url('/images/about.png')] bg-cover bg-center opacity-40"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div data-aos="fade-down" data-aos-duration="1000">
@@ -14,7 +14,7 @@ export default function About() {
             </h1>
           </div>
           <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-            <p className="text-xl sm:text-2xl text-blue-200 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl sm:text-2xl text-amber-300 max-w-3xl mx-auto leading-relaxed">
               Passion for design, commitment to excellence
             </p>
           </div>
@@ -105,28 +105,31 @@ export default function About() {
                 icon: Heart,
                 title: 'Passion',
                 description: 'We pour our heart and soul into every project, treating each space as if it were our own',
-                color: 'from-red-600 to-pink-600'
+                color: 'red-600',
+                colorIcon: 'from-red-300 to-red-600'
               },
               {
                 icon: Target,
                 title: 'Precision',
                 description: 'Meticulous attention to detail ensures flawless execution from start to finish',
-                color: 'from-blue-600 to-cyan-600'
+                color: 'blue-600',
+                colorIcon: 'from-blue-300 to-blue-600'
               },
               {
                 icon: Sparkles,
                 title: 'Innovation',
                 description: 'We embrace creativity and stay ahead of design trends to deliver unique solutions',
-                color: 'from-amber-600 to-yellow-600'
+                color: 'amber-600',
+                colorIcon: 'from-amber-300 to-amber-600'
               }
             ].map((value, idx) => (
               <div
                 key={idx}
                 data-aos="fade-up"
                 data-aos-delay={idx * 100}
-                className={`group  hover:bg-gradient-to-br ${value.color}/50 border border-gray-400 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2`}
+                className={`group  bg-white/5 hover:bg-white/10 border border-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2`}
               >
-                <div className={`w-16 h-16 bg-gradient-to-br ${value.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg`}>
+                <div className={`w-16 h-16 bg-gradient-to-br ${value.colorIcon} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg`}>
                   <value.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-100 mb-4">

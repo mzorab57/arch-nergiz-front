@@ -38,7 +38,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen">
       <section className="relative py-[27rem]  overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center opacity-50"></div>
+        <div className="absolute inset-0 bg-[url('/images/contact.png')] bg-cover bg-center opacity-50"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div data-aos="fade-down" data-aos-duration="1000">
@@ -47,7 +47,7 @@ export default function Contact() {
             </h1>
           </div>
           <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-            <p className="text-xl sm:text-2xl text-teal-200 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl sm:text-2xl text-amber-300 max-w-3xl mx-auto leading-relaxed">
               Let's discuss your project and bring your vision to life
             </p>
           </div>

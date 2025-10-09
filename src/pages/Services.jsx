@@ -1,56 +1,26 @@
 import { Home, Building2, Sofa, Palette, Ruler, Sparkles } from 'lucide-react';
 import AnimatedText from '../components/AnimatedText';
+import { useEffect } from 'react';
+import useServicesStore from '../store/services';
 
 export default function Services() {
-  const services = [
-    {
-      icon: Home,
-      title: 'Residential Design',
-      description: 'Transform your home into a personalized sanctuary with our comprehensive residential interior design services.',
-      features: ['Living Rooms', 'Bedrooms', 'Kitchens', 'Bathrooms', 'Home Offices'],
-      color: 'from-blue-600 to-blue-700'
-    },
-    {
-      icon: Building2,
-      title: 'Commercial Design',
-      description: 'Create professional and inspiring workspaces that enhance productivity and reflect your brand identity.',
-      features: ['Offices', 'Retail Spaces', 'Restaurants', 'Hotels', 'Showrooms'],
-      color: 'from-emerald-600 to-emerald-700'
-    },
-    {
-      icon: Sofa,
-      title: 'Furniture Selection',
-      description: 'Expert guidance in selecting the perfect furniture pieces that combine style, comfort, and functionality.',
-      features: ['Custom Furniture', 'Space Planning', 'Color Coordination', 'Material Selection'],
-      color: 'from-purple-600 to-purple-700'
-    },
-    {
-      icon: Palette,
-      title: 'Color Consultation',
-      description: 'Professional color schemes that create the perfect atmosphere and mood for your space.',
-      features: ['Color Psychology', 'Paint Selection', 'Accent Colors', 'Lighting Coordination'],
-      color: 'from-pink-600 to-pink-700'
-    },
-    {
-      icon: Ruler,
-      title: 'Space Planning',
-      description: 'Optimize your space layout for maximum efficiency and visual appeal with our expert planning services.',
-      features: ['Layout Design', 'Traffic Flow', 'Storage Solutions', '3D Visualization'],
-      color: 'from-orange-600 to-orange-700'
-    },
-    {
-      icon: Sparkles,
-      title: 'Complete Renovation',
-      description: 'Full-service renovation projects managed from concept to completion with meticulous attention to detail.',
-      features: ['Project Management', 'Contractor Coordination', 'Quality Control', 'Timeline Management'],
-      color: 'from-amber-600 to-amber-700'
-    }
-  ];
+  const { items: services, loading, error, fetchAll } = useServicesStore();
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://nergizkhalid.com/api-nergiz';
+
+  useEffect(() => {
+    fetchAll();
+  }, [fetchAll]);
+
+  const getImageSrc = (img) => {
+    if (!img) return '/images/color.png';
+    if (img.startsWith('http')) return img;
+    return `${API_BASE_URL}/${img}`;
+  };
 
   return (
     <div className="min-h-screen">
       <section className="relative py-[27rem] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center opacity-50"></div>
+        <div className="absolute inset-0 bg-[url('/images/color.png')] bg-cover bg-center opacity-50"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div data-aos="fade-down" data-aos-duration="1000">
@@ -59,7 +29,7 @@ export default function Services() {
             </h1>
           </div>
           <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-            <p className="text-xl sm:text-2xl text-teal-200 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl sm:text-2xl text-amber-300 max-w-3xl mx-auto leading-relaxed">
               Complete interior design solutions <br/>tailored to your needs
             </p>
           </div>
@@ -76,42 +46,58 @@ export default function Services() {
             <p data-aos="fade-up" data-aos-delay="200" className="text-xl text-gray-400 max-w-2xl mx-auto">
               From concept to completion, we cover all types of design projects with creativity, precision, and care
             </p>
+            {loading && (
+              <p className="mt-4 text-gray-400">Loading services...</p>
+            )}
+            {error && (
+              <p className="mt-4 text-red-400">{error}</p>
+            )}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, idx) => (
-              <div
-                key={idx}
-                data-aos="fade-up"
-                data-aos-delay={idx * 100}
-                className="group bg-white/5 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-700 hover:border-amber-200 hover:-translate-y-2"
-              >
-                <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg`}>
-                  <service.icon className="w-8 h-8 text-white" />
-                </div>
+          {!loading && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map((service, idx) => (
+                <div
+                  key={service.id || idx}
+                  data-aos="fade-up"
+                  data-aos-delay={idx * 100}
+                  className="group bg-white/5 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-700 hover:border-amber-200 hover:-translate-y-2"
+                >
+                  {/* Image */}
+                  <img
+                    src={getImageSrc(service.image)}
+                    alt={service.name}
+                    className="w-full h-32 object-cover rounded-xl mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg"
+                  />
 
-                <h3 className="text-2xl font-bold text-gray-100 mb-4">
-                  {service.title}
-                </h3>
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold text-gray-100 mb-4">
+                    {service.name}
+                  </h3>
 
-                <p className="text-gray-400 mb-6 leading-relaxed">
-                  {service.description}
-                </p>
+                  {/* Description */}
+                  <p className="text-gray-400 mb-6 leading-relaxed">
+                    {service.description}
+                  </p>
 
-                <div className="space-y-2">
-                  {service.features.map((feature, featureIdx) => (
-                    <div
-                      key={featureIdx}
-                      className="flex items-center space-x-2 text-gray-400"
-                    >
-                      <div className="w-1.5 h-1.5 bg-amber-600 rounded-full"></div>
-                      <span className="text-sm">{feature}</span>
+                  {/* Optional features if available */}
+                  {Array.isArray(service.features) && service.features.length > 0 && (
+                    <div className="space-y-2">
+                      {service.features.map((feature, featureIdx) => (
+                        <div
+                          key={featureIdx}
+                          className="flex items-center space-x-2 text-gray-400"
+                        >
+                          <div className="w-1.5 h-1.5 bg-amber-600 rounded-full"></div>
+                          <span className="text-sm">{feature}</span>
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  )}
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

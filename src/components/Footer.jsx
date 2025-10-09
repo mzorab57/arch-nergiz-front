@@ -15,11 +15,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div data-aos="fade-up" data-aos-delay="0">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-amber-600 to-amber-800 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">NK</span>
-              </div>
-              <span className="text-xl font-bold">Nergiz Khalida</span>
+           <div className="w-fit scale-125  ml-5 mb-5  transform group-hover:rotate-6 transition-transform duration-300">
+             <img src={`${
+                '/logo.png'
+            }`} alt="Nergiz Khalida" className="w-20 place-self-start" />
             </div>
             <p className="text-gray-400 leading-relaxed">
               Complete interior design services with full attention to every detail.
@@ -46,7 +45,7 @@ export default function Footer() {
                 className="flex items-start space-x-3 text-gray-400 hover:text-amber-500 transition-colors group"
               >
                 <Phone className="w-5 h-5 mt-0.5 group-hover:scale-110 transition-transform" />
-                <span className="break-all">{contact?.phone || '+964 750 123 4567'}</span>
+                <span className="break-all">{contact?.phone || '+964 750 391 3540'}</span>
               </a>
             </div>
           </div>
@@ -55,30 +54,38 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-6 text-amber-500">Follow Us</h3>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.instagram.com/nergiz.khalid?igsh=eHFiaWk4bXdieGdn"
                 className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-amber-600 transition-all duration-300 hover:scale-110 hover:rotate-6"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/share/17RzMLCaMT/"
                 className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-amber-600 transition-all duration-300 hover:scale-110 hover:rotate-6"
               >
                 <Facebook className="w-5 h-5" />
               </a>
-              <a
-                href="#"
-                className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-amber-600 transition-all duration-300 hover:scale-110 hover:rotate-6"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
+              
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
-          <p>&copy; {new Date().getFullYear()} Nergiz Khalida Interior Design. All rights reserved.</p>
+{/* Footer Bottom */}
+        <div className="mt-12 pt-6 border-t border-gray-700 text-center text-gray-400">
+          <p>&copy; {new Date().getFullYear()} Nergiz Khalida. all rights reserved.</p>
+          <p className="mt-2">
+            Powered by{" "}
+            <a 
+              href="https://wa.me/96407701411893"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-amber-500 hover:underline"
+            >
+              Al-Code
+            </a>
+          </p>
         </div>
+      
       </div>
     </footer>
   );

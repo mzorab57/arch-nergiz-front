@@ -5,7 +5,7 @@ import { ArrowRight} from 'lucide-react';
 const Hero = () => {
   return (
    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-800">
+        <div className="absolute inset-0 ">
           <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center opacity-40"></div>
         </div>
 

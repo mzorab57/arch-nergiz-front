@@ -6,7 +6,7 @@ import usePortfolioStore from '../store/portfolio';
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [selectedModalImage, setSelectedModalImage] = useState(0);
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost/api-nergiz';
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://nergizkhalid.com/api-nergiz';
   const { items, loading, error, filter, setFilter, fetchAll } = usePortfolioStore();
 
   useEffect(() => {

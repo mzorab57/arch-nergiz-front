@@ -37,20 +37,19 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center space-x-2 group">
+          <Link onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} to="/" className="flex items-center space-x-2 group">
             <div className=" scale-125  flex items-center justify-center transform group-hover:rotate-6 transition-transform duration-300">
-             <img src="/logoBlack.png" alt="Nergiz Khalida" className="w-8 h-8" />
+             <img src={`${
+              scrolled ? '/logoBlack.png' : '/logo.png'
+            }`} alt="Nergiz Khalida" className="w-16" />
             </div>
-            <span className={`text-xl font-bold transition-colors duration-300 ${
-              scrolled ? 'text-gray-900' : 'text-white'
-            }`}>
-              Nergiz Khalida
-            </span>
+           
           </Link>
 
           <div className="hidden md:flex items-center space-x-1">
             {navLinks.map(({ to, label, icon: Icon }) => (
               <Link
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 key={to}
                 to={to}
                 className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 flex items-center space-x-2 group ${

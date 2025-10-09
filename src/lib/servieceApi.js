@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost/api-nergiz';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://nergizkhalid.com/api-nergiz';
 
 // Create axios instance with base configuration
 const api = axios.create({
@@ -16,3 +16,23 @@ export async function getServices(params = {}) {
   const res = await api.get('/services', { params });
   return res.data;
 }
+
+// Create a service (admin only)
+export async function createService(payload) {
+  const res = await api.post('/services', payload);
+  return res.data;
+}
+
+// Update a service (admin only)
+export async function updateService(id, payload) {
+  const res = await api.put('/services', { id, ...payload });
+  return res.data;
+}
+
+// Delete a service (admin only)
+export async function deleteService(id) {
+  const res = await api.delete(`/services/${id}`);
+  return res.data;
+}
+
+export default api;
