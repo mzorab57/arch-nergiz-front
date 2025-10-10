@@ -12,6 +12,8 @@ const usePortfolioStore = create((set) => ({
     try {
       const data = await getPortfolios(params);
       const items = Array.isArray(data) ? data : [];
+      console.log(items);
+      console.log("items");
       set({ items, loading: false });
     } catch (err) {
       const message = err?.response?.data?.error || err?.message || 'Failed to fetch portfolio';

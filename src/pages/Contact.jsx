@@ -37,10 +37,10 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen">
-      <section className="relative py-[27rem]  overflow-hidden">
+      <section className="relative h-screen overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/contact.png')] bg-cover bg-center opacity-50"></div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative translate-y-1/3 h-full z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div data-aos="fade-down" data-aos-duration="1000">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
               Get In Touch

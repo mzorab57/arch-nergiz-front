@@ -17,7 +17,7 @@ const Hero = () => {
           </div>
 
           <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-            <p className="text-xl sm:text-2xl lg:text-3xl text-amber-400 mb-8 font-light">
+            <p className="text-xl sm:text-2xl lg:text-3xl  text-amber-400 mb-8 font-light">
               Interior Design Excellence
             </p>
           </div>

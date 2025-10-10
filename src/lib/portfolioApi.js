@@ -13,12 +13,13 @@ const api = axios.create({
 
 // Fetch all portfolio items (optionally filtered by category_id or type)
 export async function getPortfolios(params = {}) {
-  const res = await api.get('/portfolio', { params });
+  const res = await api.get(`${API_BASE_URL}/portfolio`, { params });
+  console.log(res.data);
   return res.data;
 }
 
 // Fetch portfolio item by ID
 export async function getPortfolioById(id) {
-  const res = await api.get(`/portfolio/${id}`);
+  const res = await api.get(`${API_BASE_URL}/portfolio/${id}`);
   return res.data;
 }

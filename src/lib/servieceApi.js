@@ -13,25 +13,25 @@ const api = axios.create({
 
 // Fetch all services
 export async function getServices(params = {}) {
-  const res = await api.get('/services', { params });
+  const res = await api.get(`${API_BASE_URL}/services`, { params });
   return res.data;
 }
 
 // Create a service (admin only)
 export async function createService(payload) {
-  const res = await api.post('/services', payload);
+  const res = await api.post(`${API_BASE_URL}/services`, payload);
   return res.data;
 }
 
 // Update a service (admin only)
 export async function updateService(id, payload) {
-  const res = await api.put('/services', { id, ...payload });
+  const res = await api.put(`${API_BASE_URL}/services/`, { id, ...payload });
   return res.data;
 }
 
 // Delete a service (admin only)
 export async function deleteService(id) {
-  const res = await api.delete(`/services/${id}`);
+  const res = await api.delete(`${API_BASE_URL}/services/${id}`);
   return res.data;
 }
 
