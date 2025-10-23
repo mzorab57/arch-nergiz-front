@@ -26,10 +26,10 @@ export default function AnimatedText({ text, className = '', delay = 0 }) {
       {text.split(' ').map((word, idx) => (
         <span
           key={idx}
-          className="inline-block mr-2"
+          className="inline-block mr-2 font-sans"
           style={{
             opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+            transform: isVisible ? 'translateY(0)' : 'translateY(90px)',
             transition: `all 0.5s ease ${idx * 0.05}s`,
           }}
         >

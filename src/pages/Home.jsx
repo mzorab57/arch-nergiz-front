@@ -6,16 +6,21 @@ import OurPhilosophy from '../components/OurPhilosophy';
 import StartProject from '../components/StartProject';
 import Project from '../components/Project';
 
+import AboutNergiz from '../components/AboutNergiz';
+import ServicesTitle from '../components/ServicesTitle';
+import KineticScrollGallery from '../components/KineticScrollGallery';
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white">
      <Hero />
+     <AboutNergiz />
+     <KineticScrollGallery />
+     {/* <WhyChooseUs /> */}
+    <ServicesTitle />
+     {/* <OurPhilosophy /> */}
 
-     <WhyChooseUs />
-
-     <OurPhilosophy />
-
-     <Project />
+     {/* <Project /> */}
      <StartProject />
     </div>
   );

@@ -4,14 +4,14 @@ import { Palette, Lightbulb, Award, Users } from 'lucide-react';
 
 const WhyChooseUs = () => {
   return (
-      <section className="py-24 ">
+      <section className="py-24 font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <AnimatedText
               text="Why Choose Nergiz Khalida"
-              className="text-4xl sm:text-5xl font-bold text-gray-100 mb-4"
+              className="text-4xl sm:text-5xl  text-gray-100 mb-4"
             />
-            <p data-aos="fade-up" data-aos-delay="200" className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p data-aos="fade-up" data-aos-delay="200" className="text-xl font-sans text-gray-400 max-w-2xl mx-auto">
               We combine creativity, precision, and passion to deliver exceptional interior design solutions
             </p>
           </div>

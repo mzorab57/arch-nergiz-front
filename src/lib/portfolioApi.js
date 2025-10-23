@@ -20,6 +20,14 @@ export async function getPortfolios(params = {}) {
 
 // Fetch portfolio item by ID
 export async function getPortfolioById(id) {
-  const res = await api.get(`${API_BASE_URL}/portfolio/${id}`);
-  return res.data;
+  // Since the API doesn't support individual portfolio endpoints,
+  // we fetch all portfolios and find the one with matching ID
+  const allPortfolios = await getPortfolios();
+  const portfolio = allPortfolios.find(item => item.id === parseInt(id));
+  
+  if (!portfolio) {
+    throw new Error(`Portfolio with ID ${id} not found`);
+  }
+  
+  return portfolio;
 }

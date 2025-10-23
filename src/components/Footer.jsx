@@ -11,7 +11,7 @@ export default function Footer() {
   const contact = items && items.length > 0 ? items[0] : null;
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+    <footer className=" text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div data-aos="fade-up" data-aos-delay="0">
@@ -27,11 +27,11 @@ export default function Footer() {
           </div>
 
           <div data-aos="fade-up" data-aos-delay="100">
-            <h3 className="text-lg font-semibold mb-6 text-amber-500">Contact Info</h3>
+            <h3 className="text-lg font-semibold mb-6 text-gray-500">Contact Info</h3>
             <div className="space-y-4">
               <a
                 href={contact?.email ? `mailto:${contact.email}` : '#'}
-                className="flex items-start space-x-3 text-gray-400 hover:text-amber-500 transition-colors group"
+                className="flex items-start space-x-3 text-gray-400 hover:text-gray-500 transition-colors group"
               >
                 <Mail className="w-5 h-5 mt-0.5 group-hover:scale-110 transition-transform" />
                 <span className="break-all">{contact?.email || 'nergiz.designer@gmail.com'}</span>
@@ -42,7 +42,7 @@ export default function Footer() {
               </div>
               <a
                 href={contact?.phone ? `tel:${contact.phone}` : '#'}
-                className="flex items-start space-x-3 text-gray-400 hover:text-amber-500 transition-colors group"
+                className="flex items-start space-x-3 text-gray-400 hover:text-gray-500 transition-colors group"
               >
                 <Phone className="w-5 h-5 mt-0.5 group-hover:scale-110 transition-transform" />
                 <span className="break-all">{contact?.phone || '+964 750 391 3540'}</span>
@@ -51,17 +51,17 @@ export default function Footer() {
           </div>
 
           <div data-aos="fade-up" data-aos-delay="200">
-            <h3 className="text-lg font-semibold mb-6 text-amber-500">Follow Us</h3>
+            <h3 className="text-lg font-semibold mb-6 text-gray-500">Follow Us</h3>
             <div className="flex space-x-4">
               <a
                 href="https://www.instagram.com/nergiz.khalid?igsh=eHFiaWk4bXdieGdn"
-                className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-amber-600 transition-all duration-300 hover:scale-110 hover:rotate-6"
+                className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-600 transition-all duration-300 hover:scale-110 hover:rotate-6"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
                 href="https://www.facebook.com/share/17RzMLCaMT/"
-                className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-amber-600 transition-all duration-300 hover:scale-110 hover:rotate-6"
+                className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-600 transition-all duration-300 hover:scale-110 hover:rotate-6"
               >
                 <Facebook className="w-5 h-5" />
               </a>
@@ -79,7 +79,7 @@ export default function Footer() {
               href="https://wa.me/96407701411893"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-amber-500 hover:underline"
+              className="text-gray-500 hover:underline"
             >
               Al-Code
             </a>
