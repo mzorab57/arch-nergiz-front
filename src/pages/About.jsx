@@ -75,7 +75,7 @@ export default function About() {
 
 {/* our mision */}
       <section className="py-24 ">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 ">
           <div className="text-center font-light mb-16">
             <AnimatedText
               text="Our Mission & Vision"
@@ -83,10 +83,10 @@ export default function About() {
             />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div data-aos="fade-right" data-aos-duration="1000" className=" rounded p-10 text-white shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 overflow-hidden">
+            <div data-aos="fade-right" data-aos-duration="1000" className=" rounded px-1 text-center text-white ">
               <div className="w-16 h-16  rounded-xl flex items-center justify-center mb-6">
-                <Target className="w-8 h-8 text-white" />
+                <Target className="w-8 h-8 text-white hidden lg:block" />
               </div>
               <h3 className="text-3xl font-light mb-6">Our Mission</h3>
               <p className="text-gray-300 text-lg leading-relaxed font-light">
@@ -97,9 +97,9 @@ export default function About() {
               </p>
             </div>
 
-            <div data-aos="fade-left" data-aos-duration="1000" className=" rounded p-10 text-white shadow-2xl">
-              <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-6">
-                <Eye className="w-8 h-8 text-white" />
+            <div data-aos="fade-left" data-aos-duration="1000" className=" rounded px-1 text-center text-white ">
+              <div className="w-16 h-16  backdrop-blur-sm rounded-xl flex items-center justify-center mb-6">
+                <Eye className="w-8 h-8 text-white hidden lg:block" />
               </div>
               <h3 className="text-3xl font-light mb-6">Our Vision</h3>
               <p className="text-amber-50 text-lg leading-relaxed font-light">
